@@ -19,8 +19,8 @@ int main(int argc, const char * argv[]) {
     int max = 999;
     vector<int> all;
     
-    for(int i = max; i > 0; i--){
-        for(int x = max; x > 0 ; x--){
+    for(int i = max; i > 99; i--){
+        for(int x = max; x >99 ; x--){
             
             int product = (i * x);
             if(isPalin(product)){
