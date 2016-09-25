@@ -23,8 +23,8 @@ int main(int argc, const char * argv[]) {
 int findPythag(int max){
     
     for(int a = 0; a  < max; a++ ){
-        for(int b = 0; b < max; b++){
-            for(int c = 0; c < max; c++){
+        for(int b = 0; b < max-a; b++){
+            for(int c = 0; c < max-b; c++){
                 
                 if(a !=b && b != c && c != a && isPythag(a, b, c)){
                     if(a+b+c == max){
