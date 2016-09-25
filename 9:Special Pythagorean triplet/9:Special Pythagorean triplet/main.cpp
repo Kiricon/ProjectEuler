@@ -10,7 +10,7 @@
 #include <vector>
 using namespace std;
 
-void findPythag(int);
+int findPythag(int);
 bool isPythag(int, int, int);
 
 int main(int argc, const char * argv[]) {
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
 }
 
 
-void findPythag(int max){
+int findPythag(int max){
     
     for(int a = 0; a  < max; a++ ){
         for(int b = 0; b < max; b++){
@@ -29,6 +29,7 @@ void findPythag(int max){
                 if(a !=b && b != c && c != a && isPythag(a, b, c)){
                     if(a+b+c == max){
                         cout << a*b*c << endl;
+                        return 1;
                     }
                 }
                 
@@ -37,6 +38,7 @@ void findPythag(int max){
             }
         }
     }
+    return 0;
 }
 
 bool isPythag(int a, int b, int c){
