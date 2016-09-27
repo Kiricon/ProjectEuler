@@ -22,6 +22,7 @@ int main(int argc, const char * argv[]) {
             total += i;
         }
     }
+    
     cout << total << endl;
     return 0;
 }
@@ -29,9 +30,11 @@ int main(int argc, const char * argv[]) {
 
 //Check if our number is a prime number or not in the quickest way possible.
 bool isPrime(long num){
-    if(num % 2 == 0){
+    if(num % 2 == 0 ){
         return false;
     }else if(num < 3){
+        return false;
+    }else if(num > 5 && num % 5 == 0){
         return false;
     }
     
