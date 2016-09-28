@@ -34,6 +34,37 @@ int main(int argc, const char * argv[]) {
         }
     }
     
+    // read vertical
+    
+    for(int r = 0; r < grid.size()-4; r++){
+        for(int c = 0; c < grid.size(); c++){
+            
+            long product =  grid[r][c] * grid[r+1][c] * grid[r+2][c] * grid[r+3][c];
+            if(product > answer){
+                answer = product;
+            }
+        }
+        
+    }
+    
+    // read diagnolly
+    for(int r = 0; r < grid.size()-nums; r++){
+        for(int c = 0; c < grid.size()-nums; c++){
+            
+            long product1, product2;
+            
+            product1 = grid[r][c] * grid[r+1][c+1] * grid[r+2][c+2] * grid[r+3][c+3];
+            if(product1 > answer){
+                answer = product1;
+            }
+            
+            product2 = grid[r+3][c] * grid[r+2][c+1] * grid[r+1][c+2] * grid[r][c+3];
+            if(product2 > answer){
+                answer = product2;
+            }
+            
+        }
+    }
     
     cout << answer;
     
@@ -57,16 +88,14 @@ vector<int> split(string str, string sep){
 vector<vector<int> > readFile(){
     
     vector<vector<int> > numbers;
-    vector<string> b;
     
     ifstream file("input.txt");
     string str;
     while (getline(file, str))
     {
         // Process str
-        b.push_back(str);
+        numbers.push_back(split(str, " "));
     }
     
-    b;
     return numbers;
 }
