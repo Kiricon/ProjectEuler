@@ -8,14 +8,11 @@ num = 13
 i = 0
 
 while num != 1:
-
-    print str(num)+'\n'
-
-    if( i != 0):
+    print num
+    if num % 2 == 0:
         num = even(num)
-        i -= 1
     else:
         num = odd(num)
-        i = 3
-
+    i += 1
+    
 print num
