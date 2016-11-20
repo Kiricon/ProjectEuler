@@ -1,26 +1,13 @@
 
-down = 2
-left = 2
 branches = 0
 
-
-def move(d, l):
-    global branches
-    if(d > 0):
-        newD = d-1
-        newL = l
-        move(newD, newL)
-
-    if(l > 0):
-        newD = d
-        newL = l-1
-        move(newD, newL)
+w, h = 21,21
+Matrix = [[1 for x in range(w)] for y in range(h)]
 
 
-    if d == 0 and l == 0:
-        branches +=1
+for x in range(1, w):
+    for y in range(1, h):
+        Matrix[x][y] = Matrix[x][y-1]+Matrix[x-1][y]
 
 
-move(down, left)
-
-print branches
+print Matrix[w-1][h-1]
